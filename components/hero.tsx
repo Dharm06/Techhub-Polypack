@@ -1,49 +1,62 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { ArrowRight, Phone, Mail, ChevronLeft, ChevronRight } from 'lucide-react'
-import Image from 'next/image'
+import { useState, useEffect } from "react";
+import {
+  ArrowRight,
+  Phone,
+  Mail,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
-  const [animate, setAnimate] = useState(false)
-  const [currentProduct, setCurrentProduct] = useState(0)
+  const [animate, setAnimate] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState(0);
 
   const products = [
     {
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product1-457mdklFNJDRG0Sm2vz1bN02F5T53k.png',
-      name: 'Vented Storage Crate',
-      description: 'Ideal for produce and food storage'
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product1-457mdklFNJDRG0Sm2vz1bN02F5T53k.png",
+      name: "Vented Storage Crate",
+      description: "Ideal for produce and food storage",
     },
     {
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product2-mC9xmxENf6J0L4QgfIp4WnkzdFw0OY.png',
-      name: 'Industrial Storage Box',
-      description: 'Premium quality plastic crate'
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product2-mC9xmxENf6J0L4QgfIp4WnkzdFw0OY.png",
+      name: "Industrial Storage Box",
+      description: "Premium quality plastic crate",
     },
     {
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product3.jpeg-6zmKtpe9Xc9MDVfu2TuJ62jDUeWTlA.png',
-      name: 'Lidded Storage Container',
-      description: 'Secure storage with locking handles'
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product3.jpeg-6zmKtpe9Xc9MDVfu2TuJ62jDUeWTlA.png",
+      name: "Lidded Storage Container",
+      description: "Secure storage with locking handles",
     },
     {
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product4.jpeg-QeTUKkqybCvdzuAfmMICNoa3PvncUS.png',
-      name: 'Pallet Storage System',
-      description: 'Multi-box industrial pallet solution'
-    }
-  ]
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product4.jpeg-QeTUKkqybCvdzuAfmMICNoa3PvncUS.png",
+      name: "Pallet Storage System",
+      description: "Multi-box industrial pallet solution",
+    },
+  ];
 
   useEffect(() => {
-    setAnimate(true)
+    setAnimate(true);
     const interval = setInterval(() => {
-      setCurrentProduct((prev) => (prev + 1) % products.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
+      setCurrentProduct((prev) => (prev + 1) % products.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <section
+      id="home"
+      className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-gray-50 -z-10" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
       <div className="absolute -bottom-8 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
@@ -51,20 +64,22 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className={`${animate ? 'animate-fade-in-left' : 'opacity-0'}`}>
+          <div className={`${animate ? "animate-fade-in-left" : "opacity-0"}`}>
             <div className="inline-block mb-4">
               <span className="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
                 ₹100 Crore | International Standards
               </span>
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Premium Plastic Crates & Industrial Packaging
+              Techhub Polypack: India's Premier Plastic Storage Solutions
+              Manufacturer
             </h1>
-            
+
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Leading manufacturer delivering high-quality storage solutions with unmatched durability, 
-              sustainability, and innovation. Trusted by 500+ clients across India for 10+ years.
+              Leading manufacturer delivering high-quality storage solutions
+              with unmatched durability, sustainability, and innovation. Trusted
+              by 500+ clients across India for 10+ years.
             </p>
 
             {/* CTA Buttons */}
@@ -74,7 +89,10 @@ export default function Hero() {
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold rounded-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                 Get Quote Now
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={20}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </a>
               <a
                 href="#contact"
@@ -114,13 +132,15 @@ export default function Hero() {
           </div>
 
           {/* Right Visual - Product Carousel */}
-          <div className={`relative hidden md:block ${animate ? 'animate-fade-in-right' : 'opacity-0'}`}>
+          <div
+            className={`relative hidden md:block ${animate ? "animate-fade-in-right" : "opacity-0"}`}
+          >
             <div className="relative w-full h-full flex flex-col items-center justify-center">
               {/* Product Display */}
               <div className="relative w-full aspect-square bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl overflow-hidden flex items-center justify-center mb-8 border border-gray-200 shadow-2xl">
                 {/* Background accent */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-transparent to-transparent opacity-30" />
-                
+
                 {/* Product Image */}
                 <div className="relative w-80 h-80 flex items-center justify-center">
                   <Image
@@ -135,16 +155,28 @@ export default function Hero() {
 
                 {/* Navigation Arrows */}
                 <button
-                  onClick={() => setCurrentProduct((prev) => (prev - 1 + products.length) % products.length)}
+                  onClick={() =>
+                    setCurrentProduct(
+                      (prev) => (prev - 1 + products.length) % products.length,
+                    )
+                  }
                   className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center z-10 group"
                 >
-                  <ChevronLeft size={24} className="group-hover:translate-x-1 transition-transform" />
+                  <ChevronLeft
+                    size={24}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </button>
                 <button
-                  onClick={() => setCurrentProduct((prev) => (prev + 1) % products.length)}
+                  onClick={() =>
+                    setCurrentProduct((prev) => (prev + 1) % products.length)
+                  }
                   className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center z-10 group"
                 >
-                  <ChevronRight size={24} className="group-hover:-translate-x-1 transition-transform" />
+                  <ChevronRight
+                    size={24}
+                    className="group-hover:-translate-x-1 transition-transform"
+                  />
                 </button>
               </div>
 
@@ -166,8 +198,8 @@ export default function Hero() {
                     onClick={() => setCurrentProduct(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       index === currentProduct
-                        ? 'bg-blue-600 w-8'
-                        : 'bg-gray-300 w-2 hover:bg-gray-400'
+                        ? "bg-blue-600 w-8"
+                        : "bg-gray-300 w-2 hover:bg-gray-400"
                     }`}
                   />
                 ))}
@@ -175,7 +207,41 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+        <div className="mt-14 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-blue-500/20 shadow-2xl overflow-hidden">
+          <div className="relative px-6 py-7 md:px-10 md:py-8">
+            <div className="absolute -top-10 -right-6 h-28 w-28 rounded-full bg-blue-500/20 blur-2xl" />
+            <div className="absolute -bottom-10 left-10 h-24 w-24 rounded-full bg-cyan-400/20 blur-2xl" />
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div>
+                <p className="text-2xl md:text-4xl font-bold text-white leading-tight">
+                  The smart way to protect your goods with the leader in{" "}
+                  <span
+                    className="text-blue-400 inline-block"
+                    style={{ fontFamily: "'Brush Script MT', 'Segoe Script', cursive" }}
+                  >
+                    Plastics
+                  </span>
+                </p>
+                <p className="mt-2 text-blue-100/80 text-sm md:text-base">
+                  Check out our product range and applications for more.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <a
+                  href="#products"
+                  className="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-colors whitespace-nowrap"
+                >
+                  View Products
+                </a>
+                <span className="text-blue-100 hidden sm:inline">or catalog.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

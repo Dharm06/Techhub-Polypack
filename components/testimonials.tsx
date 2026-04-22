@@ -17,11 +17,18 @@ const clients = [
   { id: 12, name: 'NextGen Supply Chain', color: 'from-teal-400 to-teal-600' },
 ]
 
+const seededBetween = (seed: number, min: number, max: number) => {
+  const x = Math.sin(seed * 999) * 10000
+  const normalized = x - Math.floor(x)
+  return min + normalized * (max - min)
+}
+
 const mapDots = Array.from({ length: 30 }).map((_, i) => ({
   id: i,
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  size: Math.random() * 3 + 1,
+  x: seededBetween(i + 1, 0, 100),
+  y: seededBetween(i + 101, 0, 100),
+  size: seededBetween(i + 201, 1, 4),
+  opacity: seededBetween(i + 301, 0.2, 0.8),
 }))
 
 export default function Testimonials() {
@@ -39,7 +46,7 @@ export default function Testimonials() {
             <path d="M 50 0 Q 50 25, 50 50 T 50 100" />
             <path d="M 70 0 Q 70 25, 70 50 T 70 100" />
           </g>
-          {/* Random dots representing global locations */}
+          {/* Decorative dots representing global locations */}
           {mapDots.map((dot) => (
             <circle
               key={dot.id}
@@ -47,7 +54,7 @@ export default function Testimonials() {
               cy={dot.y}
               r={dot.size}
               fill="#0066cc"
-              opacity={Math.random() * 0.6 + 0.2}
+              opacity={dot.opacity}
             />
           ))}
         </svg>
