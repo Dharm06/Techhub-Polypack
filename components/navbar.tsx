@@ -28,23 +28,24 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50">
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-10 py-1 flex items-center justify-between gap-2">
           <a
             href="tel:+919999999999"
-            className="flex items-center gap-2 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
+            className="flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
           >
             <Phone size={14} />
-            <span>+91 XXXX XXX XXX</span>
+            <span className="sm:hidden">+91 XXXXXXXX</span>
+            <span className="hidden sm:inline">+91 XXXX XXX XXX</span>
           </a>
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="#inquiry"
-              className="px-3 py-1 rounded-md bg-white text-blue-700 text-xs sm:text-sm font-semibold hover:bg-blue-50 transition-colors"
+              className="px-2.5 sm:px-3 py-1 rounded-md bg-white text-blue-700 text-xs sm:text-sm font-semibold hover:bg-blue-50 transition-colors whitespace-nowrap"
             >
               Get Quote
             </a>
-            <div className="flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-1">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
@@ -62,7 +63,7 @@ export default function Navbar() {
 
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 md:h-24">
+          <div className="flex justify-between items-center h-16 md:h-24">
             {/* Logo */}
             <Link
               href="#home"
@@ -73,7 +74,7 @@ export default function Navbar() {
                 alt="Techhub Polypack"
                 width={100}
                 height={100}
-                className="h-[72px] w-auto"
+                className="h-12 sm:h-14 md:h-[72px] w-auto"
                 priority
               />
             </Link>

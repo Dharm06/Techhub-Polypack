@@ -1,140 +1,115 @@
 'use client'
 
-import { MapPin } from 'lucide-react'
-
-const clients = [
-  { id: 1, name: 'FreshMart Logistics', color: 'from-green-400 to-green-600' },
-  { id: 2, name: 'PackRight Industries', color: 'from-red-400 to-red-600' },
-  { id: 3, name: 'GlobalSupply Solutions', color: 'from-purple-400 to-purple-600' },
-  { id: 4, name: 'EcoStore Retail', color: 'from-blue-400 to-blue-600' },
-  { id: 5, name: 'Pinnacle Distribution', color: 'from-orange-400 to-orange-600' },
-  { id: 6, name: 'FastFood Express', color: 'from-yellow-400 to-yellow-600' },
-  { id: 7, name: 'TechPro Manufacturing', color: 'from-cyan-400 to-cyan-600' },
-  { id: 8, name: 'EliteLogistics Group', color: 'from-pink-400 to-pink-600' },
-  { id: 9, name: 'SmartRetail India', color: 'from-indigo-400 to-indigo-600' },
-  { id: 10, name: 'Premium Warehousing', color: 'from-emerald-400 to-emerald-600' },
-  { id: 11, name: 'Continental Foods', color: 'from-amber-400 to-amber-600' },
-  { id: 12, name: 'NextGen Supply Chain', color: 'from-teal-400 to-teal-600' },
-]
-
-const seededBetween = (seed: number, min: number, max: number) => {
-  const x = Math.sin(seed * 999) * 10000
-  const normalized = x - Math.floor(x)
-  return min + normalized * (max - min)
+type FloatingCompany = {
+  id: string
+  name: string
+  x: string
+  y: string
+  delay: string
+  duration: string
 }
 
-const mapDots = Array.from({ length: 30 }).map((_, i) => ({
-  id: i,
-  x: seededBetween(i + 1, 0, 100),
-  y: seededBetween(i + 101, 0, 100),
-  size: seededBetween(i + 201, 1, 4),
-  opacity: seededBetween(i + 301, 0.2, 0.8),
-}))
+const floatingCompanies: FloatingCompany[] = [
+  { id: 'tata', name: 'Tata', x: '8%', y: '14%', delay: '0s', duration: '6.7s' },
+  { id: 'bubblefine', name: 'Bubblefine', x: '22%', y: '30%', delay: '0.6s', duration: '7.2s' },
+  { id: 'techaids', name: 'Techaids', x: '77%', y: '12%', delay: '1.1s', duration: '6.8s' },
+  { id: 'fireescape', name: 'Fireescape', x: '84%', y: '30%', delay: '0.3s', duration: '7.4s' },
+  { id: 'kp-infotech', name: 'KP Infotech', x: '76%', y: '52%', delay: '1.5s', duration: '6.9s' },
+  { id: 'sfc-solution', name: 'SFC Solution', x: '9%', y: '50%', delay: '0.8s', duration: '7.6s' },
+  { id: 'zippycubs', name: 'Zippycubs Pvt Ltd', x: '14%', y: '72%', delay: '1.2s', duration: '6.6s' },
+  { id: 'kwality-pack', name: 'Kwality Pack', x: '80%', y: '71%', delay: '0.4s', duration: '7.1s' },
+  { id: 'advik-enterprise', name: 'Advik Enterprise', x: '30%', y: '84%', delay: '1.8s', duration: '6.7s' },
+  { id: 'on2cook', name: 'On2cook India Pvt Ltd', x: '60%', y: '84%', delay: '0.9s', duration: '7.3s' },
+]
 
 export default function Testimonials() {
   return (
-    <section id="clients" className="py-20 md:py-32 bg-white relative overflow-hidden">
-      {/* World Map Dots Background */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          {/* Decorative map lines */}
-          <g stroke="#0066cc" strokeWidth="0.2" fill="none" opacity="0.3">
-            <path d="M 0 30 Q 25 20, 50 30 T 100 30" />
-            <path d="M 0 50 Q 25 45, 50 50 T 100 50" />
-            <path d="M 0 70 Q 25 75, 50 70 T 100 70" />
-            <path d="M 30 0 Q 30 25, 30 50 T 30 100" />
-            <path d="M 50 0 Q 50 25, 50 50 T 50 100" />
-            <path d="M 70 0 Q 70 25, 70 50 T 70 100" />
+    <section id="testimonials" className="relative py-20 md:py-28 bg-[#03040d] overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(56,189,248,0.24),transparent_36%),radial-gradient(circle_at_78%_72%,rgba(168,85,247,0.22),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(59,130,246,0.2),transparent_34%)]" />
+      <div className="absolute left-[10%] top-[18%] h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
+      <div className="absolute right-[8%] bottom-[14%] h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="absolute inset-0 opacity-80">
+        <svg className="h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+          <g fill="#ffffff">
+            {Array.from({ length: 700 }).map((_, i) => (
+              <circle
+                key={i}
+                className="galaxy-star"
+                cx={(i * 43) % 1200}
+                cy={(i * 29) % 500}
+                r={(i % 3) + 0.4}
+                opacity={(i % 5) / 8 + 0.25}
+                style={{
+                  animationDelay: `${(i % 11) * 0.35}s`,
+                  animationDuration: `${3.2 + (i % 7) * 0.45}s`,
+                }}
+              />
+            ))}
           </g>
-          {/* Decorative dots representing global locations */}
-          {mapDots.map((dot) => (
-            <circle
-              key={dot.id}
-              cx={dot.x}
-              cy={dot.y}
-              r={dot.size}
-              fill="#0066cc"
-              opacity={dot.opacity}
-            />
-          ))}
         </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full flex items-center gap-2">
-              <MapPin size={16} />
-              Global Presence
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Trusted by 500+ Companies Worldwide
+        <div className="text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Trusted by{' '}
+            <span className="inline-block bg-blue-600 text-white px-3 py-1 rounded-sm">
+              customers worldwide
+            </span>{' '}
+            every day
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From logistics to retail, food to manufacturing - leading companies across industries rely on Techhub Polypack
+          <p className="mt-5 text-sm md:text-lg uppercase tracking-wide text-blue-100/80">
+            From India to global markets, businesses across industries rely on Techhub Polypack.
           </p>
         </div>
 
-        {/* Client Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {clients.map((client) => (
-            <div
-              key={client.id}
-              className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:border-blue-300"
-            >
-              {/* Gradient Circle Background */}
+        <div className="mt-14 flex justify-center">
+          <div className="relative w-full max-w-[64rem] h-[22rem] md:h-[34rem]">
+            {floatingCompanies.map((company) => (
               <div
-                className={`w-16 h-16 rounded-full bg-gradient-to-br ${client.color} absolute -top-8 opacity-10 group-hover:opacity-20 transition-opacity`}
-              />
-
-              {/* Company Initial Avatar */}
-              <div
-                className={`w-14 h-14 rounded-full bg-gradient-to-br ${client.color} flex items-center justify-center text-white font-bold text-xl mb-4 relative z-10`}
+                key={company.id}
+                className="floating-company pointer-events-none absolute z-20 hidden md:block"
+                style={{
+                  left: company.x,
+                  top: company.y,
+                  animationDelay: company.delay,
+                  animationDuration: company.duration,
+                }}
               >
-                {client.name.charAt(0)}
+                <div className="w-max rounded-xl border border-cyan-300/50 bg-slate-900/65 px-4 py-2 text-sm font-bold uppercase tracking-wide text-cyan-100 shadow-[0_0_16px_rgba(34,211,238,0.35)] backdrop-blur">
+                  {company.name}
+                </div>
               </div>
+            ))}
 
-              {/* Company Name */}
-              <h3 className="text-center font-semibold text-gray-900 text-sm leading-tight">
-                {client.name}
-              </h3>
+            <div className="absolute left-1/2 top-1/2 h-[18rem] w-[18rem] sm:h-[20rem] sm:w-[20rem] md:h-[30rem] md:w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full p-2 bg-gradient-to-br from-blue-700 to-cyan-500 shadow-2xl shadow-blue-200/70">
+              <div className="relative h-full w-full rounded-full overflow-hidden bg-slate-900">
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src="/original-bf5c1b5df8560f599a0001dcd121a7ff.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.45),transparent_42%)]" />
+              </div>
+              <div className="absolute -inset-3 rounded-full border border-blue-300/70" />
+            </div>
+          </div>
+        </div>
 
-              {/* Hover Effect Indicator */}
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-blue-50 to-transparent" />
+        <div className="mt-8 grid grid-cols-2 gap-3 md:hidden">
+          {floatingCompanies.map((company) => (
+            <div
+              key={`mobile-${company.id}`}
+              className="rounded-xl border border-cyan-300/40 bg-slate-900/55 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-cyan-100 text-center backdrop-blur"
+            >
+              {company.name}
             </div>
           ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-3 gap-8 p-8 md:p-12 bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">500+</div>
-            <p className="text-gray-700 text-sm md:text-base">Active Clients</p>
-          </div>
-          <div className="text-center border-x border-blue-300">
-            <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">50+</div>
-            <p className="text-gray-700 text-sm md:text-base">Countries</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">10+</div>
-            <p className="text-gray-700 text-sm md:text-base">Years Experience</p>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 p-8 md:p-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Join Our Growing Network</h3>
-          <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
-            Become part of the trusted brands choosing Techhub Polypack for premium packaging solutions
-          </p>
-          <a
-            href="#inquiry"
-            className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:shadow-lg transition-all duration-300 inline-block"
-          >
-            Get in Touch Today
-          </a>
         </div>
       </div>
     </section>
