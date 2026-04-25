@@ -24,7 +24,7 @@ const floatingCompanies: FloatingCompany[] = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-20 md:py-28 bg-[#03040d] overflow-hidden">
+    <section id="testimonials" className="no-section-lines relative py-20 md:py-28 bg-[#03040d] overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(56,189,248,0.24),transparent_36%),radial-gradient(circle_at_78%_72%,rgba(168,85,247,0.22),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(59,130,246,0.2),transparent_34%)]" />
       <div className="absolute left-[10%] top-[18%] h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
       <div className="absolute right-[8%] bottom-[14%] h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />

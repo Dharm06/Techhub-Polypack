@@ -1,8 +1,14 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
+
+const waterBottlePalletImages = [
+  '/Waterbatlle Pallet.png',
+  '/Waterbottle Pallet 2.png',
+  '/Water bottle 3.png',
+]
 
 const productCategories = [
   {
@@ -37,10 +43,26 @@ const productCategories = [
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product4.jpeg-QeTUKkqybCvdzuAfmMICNoa3PvncUS.png',
     specs: 'Pallet Ready | Modular | High Capacity',
   },
+  {
+    id: 5,
+    name: 'Water Bottle Pallet',
+    description: 'Heavy-duty pallet for organized water bottle storage and transport',
+    features: ['High load capacity', 'Stack-friendly design', 'Industrial grade durability'],
+    image: '/Waterbatlle Pallet.png',
+    specs: 'Palletized | Heavy Duty | Warehouse Ready',
+  },
 ]
 
 export default function Products() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const [waterImageIndex, setWaterImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWaterImageIndex((prev) => (prev + 1) % waterBottlePalletImages.length)
+    }, 2200)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section id="products" className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
@@ -62,24 +84,34 @@ export default function Products() {
         </div>
 
         {/* Product Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {productCategories.map((product) => (
             <div
               key={product.id}
-              onMouseEnter={() => setHoveredId(product.id)}
-              onMouseLeave={() => setHoveredId(null)}
               className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer hover:scale-105"
             >
               {/* Product Image Container */}
               <div className="relative h-64 bg-gradient-to-b from-gray-50 to-white overflow-hidden flex items-center justify-center">
                 <Image
-                  src={product.image}
+                  src={product.id === 5 ? waterBottlePalletImages[waterImageIndex] : product.image}
                   alt={product.name}
                   width={300}
                   height={300}
                   className="object-contain h-56 w-full p-4"
                   priority={product.id <= 2}
                 />
+                {product.id === 5 && (
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                    {waterBottlePalletImages.map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`h-1.5 rounded-full transition-all ${
+                          idx === waterImageIndex ? 'w-4 bg-blue-600' : 'w-1.5 bg-blue-200'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Content */}
