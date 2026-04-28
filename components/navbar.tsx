@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Menu, Phone, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Menu, Phone, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,14 +29,23 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50">
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-10 py-1 flex items-center justify-between gap-2">
-          <a
-            href="tel:+919999999999"
-            className="flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
-          >
-            <Phone size={14} />
-            <span className="sm:hidden">+91 XXXXXXXX</span>
-            <span className="hidden sm:inline">+91 XXXX XXX XXX</span>
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="tel:+919999999999"
+              className="flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
+            >
+              <Phone size={14} />
+              <span className="sm:hidden">+91 XXXXXXXX</span>
+              <span className="hidden sm:inline">+91 XXXX XXX XXX</span>
+            </a>
+            <a
+              href="mailto:info@techhubpolypack.com"
+              className="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
+            >
+              <Mail size={14} />
+              <span>info@techhubpolypack.com</span>
+            </a>
+          </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
@@ -136,6 +145,13 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   WhatsApp Us
+                </a>
+                <a
+                  href="mailto:info@techhubpolypack.com"
+                  className="mx-4 px-4 py-2 border border-blue-200 text-blue-700 text-sm font-semibold rounded-lg text-center hover:bg-blue-50 transition-all"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Email Us
                 </a>
               </div>
             </div>

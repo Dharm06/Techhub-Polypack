@@ -63,7 +63,7 @@ export default function Process() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line (hidden on mobile) */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-300 to-blue-600" />
+          <div className="hidden md:block absolute left-1/2 top-6 bottom-6 transform -translate-x-1/2 w-[3px] bg-gradient-to-b from-blue-300 to-blue-600 rounded-full" />
 
           {/* Steps */}
           <div className="space-y-12 md:space-y-0">
@@ -87,8 +87,10 @@ export default function Process() {
 
                 {/* Center circle (hidden on mobile) */}
                 <div className="hidden md:flex md:w-12 md:justify-center">
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg`}>
-                    <CheckCircle size={24} className="text-white" />
+                  <div className="z-10 p-1.5 rounded-full bg-white/95 shadow-sm">
+                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg ring-2 ring-white`}>
+                      <CheckCircle size={24} className="text-white" />
+                    </div>
                   </div>
                 </div>
 

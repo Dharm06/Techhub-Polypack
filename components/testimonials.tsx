@@ -1,8 +1,11 @@
 'use client'
 
+import Image from 'next/image'
+
 type FloatingCompany = {
   id: string
   name: string
+  logo?: string
   x: string
   y: string
   delay: string
@@ -10,16 +13,16 @@ type FloatingCompany = {
 }
 
 const floatingCompanies: FloatingCompany[] = [
-  { id: 'tata', name: 'Tata', x: '8%', y: '14%', delay: '0s', duration: '6.7s' },
-  { id: 'bubblefine', name: 'Bubblefine', x: '22%', y: '30%', delay: '0.6s', duration: '7.2s' },
-  { id: 'techaids', name: 'Techaids', x: '77%', y: '12%', delay: '1.1s', duration: '6.8s' },
-  { id: 'fireescape', name: 'Fireescape', x: '84%', y: '30%', delay: '0.3s', duration: '7.4s' },
-  { id: 'kp-infotech', name: 'KP Infotech', x: '76%', y: '52%', delay: '1.5s', duration: '6.9s' },
-  { id: 'sfc-solution', name: 'SFC Solution', x: '9%', y: '50%', delay: '0.8s', duration: '7.6s' },
+  { id: 'tata', name: 'Tata', logo: '/Testimonial Logos/Tata-Logo.png', x: '8%', y: '14%', delay: '0s', duration: '6.7s' },
+  { id: 'bubblefine', name: 'Bubblefine', logo: '/Testimonial Logos/bubblefine_logo.jpg', x: '22%', y: '30%', delay: '0.6s', duration: '7.2s' },
+  { id: 'techaids', name: 'Techaids', logo: '/Testimonial Logos/techaids___india_logo.jpeg', x: '77%', y: '12%', delay: '1.1s', duration: '6.8s' },
+  { id: 'fireescape', name: 'Fireescape', logo: '/Testimonial Logos/Fireespace_logo.jpeg', x: '84%', y: '30%', delay: '0.3s', duration: '7.4s' },
+  { id: 'kp-infotech', name: 'KP Infotech', logo: '/Testimonial Logos/kpinfotech_logo.jpeg', x: '76%', y: '52%', delay: '1.5s', duration: '6.9s' },
+  { id: 'sfc-solution', name: 'SFC Solution', logo: '/Testimonial Logos/sfc_solutions_fts_sealing_logo.jpeg', x: '9%', y: '50%', delay: '0.8s', duration: '7.6s' },
   { id: 'zippycubs', name: 'Zippycubs Pvt Ltd', x: '14%', y: '72%', delay: '1.2s', duration: '6.6s' },
   { id: 'kwality-pack', name: 'Kwality Pack', x: '80%', y: '71%', delay: '0.4s', duration: '7.1s' },
-  { id: 'advik-enterprise', name: 'Advik Enterprise', x: '30%', y: '84%', delay: '1.8s', duration: '6.7s' },
-  { id: 'on2cook', name: 'On2cook India Pvt Ltd', x: '60%', y: '84%', delay: '0.9s', duration: '7.3s' },
+  { id: 'advik-enterprise', name: 'Advik Enterprise', logo: '/Testimonial Logos/advik_enterprises_logo.jpeg', x: '30%', y: '84%', delay: '1.8s', duration: '6.7s' },
+  { id: 'on2cook', name: 'On2cook India Pvt Ltd', logo: '/Testimonial Logos/on2cook_Logo.jpeg', x: '60%', y: '84%', delay: '0.9s', duration: '7.3s' },
 ]
 
 export default function Testimonials() {
@@ -76,8 +79,25 @@ export default function Testimonials() {
                   animationDuration: company.duration,
                 }}
               >
-                <div className="w-max rounded-xl border border-cyan-300/50 bg-slate-900/65 px-4 py-2 text-sm font-bold uppercase tracking-wide text-cyan-100 shadow-[0_0_16px_rgba(34,211,238,0.35)] backdrop-blur">
-                  {company.name}
+                <div className="w-max max-w-[13rem] rounded-xl border border-cyan-300/50 bg-slate-900/65 px-3 py-2 shadow-[0_0_16px_rgba(34,211,238,0.35)] backdrop-blur">
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-md bg-white/95 flex items-center justify-center overflow-hidden shrink-0">
+                      {company.logo ? (
+                        <Image
+                          src={company.logo}
+                          alt={`${company.name} logo`}
+                          width={26}
+                          height={26}
+                          className="object-contain h-6 w-6"
+                        />
+                      ) : (
+                        <span className="text-xs font-bold text-slate-900">{company.name.charAt(0)}</span>
+                      )}
+                    </div>
+                    <p className="text-xs font-bold uppercase tracking-wide text-cyan-100 leading-tight">
+                      {company.name}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -105,9 +125,26 @@ export default function Testimonials() {
           {floatingCompanies.map((company) => (
             <div
               key={`mobile-${company.id}`}
-              className="rounded-xl border border-cyan-300/40 bg-slate-900/55 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-cyan-100 text-center backdrop-blur"
+              className="rounded-xl border border-cyan-300/40 bg-slate-900/55 px-3 py-2 backdrop-blur"
             >
-              {company.name}
+              <div className="flex items-center gap-2">
+                <div className="h-7 w-7 rounded-md bg-white/95 flex items-center justify-center overflow-hidden shrink-0">
+                  {company.logo ? (
+                    <Image
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      width={22}
+                      height={22}
+                      className="object-contain h-5 w-5"
+                    />
+                  ) : (
+                    <span className="text-[10px] font-bold text-slate-900">{company.name.charAt(0)}</span>
+                  )}
+                </div>
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-cyan-100 text-left leading-tight">
+                  {company.name}
+                </p>
+              </div>
             </div>
           ))}
         </div>
