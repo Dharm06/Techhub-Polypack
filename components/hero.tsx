@@ -16,6 +16,21 @@ export default function Hero() {
 
   const products = [
     {
+      image: "/Waterbatlle Pallet.png",
+      name: "Water Bottle Pallet",
+      description: "Heavy-duty pallet for secure bottle storage and transport",
+    },
+    {
+      image: "/Waterbottle Pallet 2.png",
+      name: "Water Bottle Pallet",
+      description: "Optimized stacking layout for warehouse and distribution",
+    },
+    {
+      image: "/Water bottle 3.png",
+      name: "Water Bottle Pallet",
+      description: "Industrial-grade pallet design for high-volume handling",
+    },
+    {
       image:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product1-457mdklFNJDRG0Sm2vz1bN02F5T53k.png",
       name: "Vented Storage Crate",
