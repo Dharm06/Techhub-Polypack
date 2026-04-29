@@ -1,44 +1,52 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Mail, Phone, MapPin, Linkedin as LinkedInIcon, Facebook, Instagram, Twitter } from 'lucide-react'
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin as LinkedInIcon,
+  Facebook,
+  Instagram,
+  Twitter,
+} from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     Company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Products', href: '#products' },
-      { name: 'Testimonials', href: '#testimonials' },
-      { name: 'Blog', href: '#' },
+      { name: "About Us", href: "#about" },
+      { name: "Our Products", href: "#products" },
+      { name: "Testimonials", href: "#testimonials" },
+      { name: "Blog", href: "#" },
     ],
     Resources: [
-      { name: 'Product Catalog', href: '#' },
-      { name: 'Case Studies', href: '#' },
-      { name: 'Technical Specs', href: '#' },
-      { name: 'FAQ', href: '#' },
+      { name: "Product Catalog", href: "#" },
+      { name: "Case Studies", href: "#" },
+      { name: "Technical Specs", href: "#" },
+      { name: "FAQ", href: "#" },
     ],
     Support: [
-      { name: 'Contact Us', href: '#contact' },
-      { name: 'Order Status', href: '#' },
-      { name: 'Shipping Info', href: '#' },
-      { name: 'Warranty', href: '#' },
+      { name: "Contact Us", href: "#contact" },
+      { name: "Order Status", href: "#" },
+      { name: "Shipping Info", href: "#" },
+      { name: "Warranty", href: "#" },
     ],
     Legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Certifications', href: '#' },
-      { name: 'Sitemap', href: '#' },
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Certifications", href: "#" },
+      { name: "Sitemap", href: "#" },
     ],
-  }
+  };
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-  ]
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: LinkedInIcon, href: "#", label: "LinkedIn" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+  ];
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300">
@@ -57,7 +65,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-6">
-              Premium plastic crates & industrial packaging solutions for every business.
+              Premium plastic crates & industrial packaging solutions for every
+              business.
             </p>
 
             {/* Contact Info */}
@@ -66,19 +75,28 @@ export default function Footer() {
                 href="tel:+919999999999"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors group"
               >
-                <Phone size={16} className="group-hover:scale-110 transition-transform" />
+                <Phone
+                  size={16}
+                  className="group-hover:scale-110 transition-transform"
+                />
                 <span className="text-sm">+91 XXXX XXX XXX</span>
               </a>
               <a
                 href="mailto:info@techhubpolypack.com"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors group"
               >
-                <Mail size={16} className="group-hover:scale-110 transition-transform" />
+                <Mail
+                  size={16}
+                  className="group-hover:scale-110 transition-transform"
+                />
                 <span className="text-sm">info@techhubpolypack.com</span>
               </a>
               <div className="flex items-start gap-2 text-sm pt-2">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Pan-India presence with manufacturing & distribution facilities</span>
+                <span className="text-gray-400">
+                  Pan-India presence with manufacturing & distribution
+                  facilities
+                </span>
               </div>
             </div>
           </div>
@@ -111,7 +129,9 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-sm text-gray-400">
               <p>© {currentYear} Techhub Polypack. All rights reserved.</p>
-              <p className="mt-2">ISO 9001:2015 | FDA Approved | Made in India</p>
+              <p className="mt-2">
+                ISO 9001:2015 | FDA Approved | Made in India
+              </p>
             </div>
 
             {/* Social Links */}
@@ -124,7 +144,10 @@ export default function Footer() {
                   aria-label={label}
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors group"
                 >
-                  <Icon size={18} className="text-gray-400 group-hover:text-white transition-colors" />
+                  <Icon
+                    size={18}
+                    className="text-gray-400 group-hover:text-white transition-colors"
+                  />
                 </a>
               ))}
             </div>
@@ -136,10 +159,18 @@ export default function Footer() {
       <div className="border-t border-gray-800 bg-black/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm text-gray-500">
           <p>
-            Crafted with precision. Delivered with excellence. | Serving India with premium packaging solutions since 2014
+            Developed with love by EthosGrwoth |{" "}
+            <a
+              href="https://ethosgrowth.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              ethosgrowth.me
+            </a>
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
