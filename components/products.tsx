@@ -51,6 +51,22 @@ const productCategories = [
     image: '/Waterbatlle Pallet.png',
     specs: 'Palletized | Heavy Duty | Warehouse Ready',
   },
+  {
+    id: 6,
+    name: 'Panda Self Bin',
+    description: 'Compact bin solution for organized storage and easy handling',
+    features: ['Space-efficient profile', 'Durable plastic body', 'Multi-use application'],
+    image: '/Panda Self Bin.png',
+    specs: 'Storage Bin | Durable | Multi-purpose',
+  },
+  {
+    id: 7,
+    name: 'Supra Bin',
+    description: 'Industrial bin built for robust use in warehouse and shop-floor setups',
+    features: ['Heavy-duty design', 'Stackable format', 'Long service life'],
+    image: '/Supra Bin.png',
+    specs: 'Industrial Bin | Stackable | Heavy Duty',
+  },
 ]
 
 export default function Products() {
@@ -150,9 +166,26 @@ export default function Products() {
           <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
             We specialize in designing and manufacturing custom packaging solutions tailored to your specific requirements.
           </p>
-          <button className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:shadow-lg transition-all duration-300">
-            Request Quotation
-          </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:shadow-lg transition-all duration-300">
+              Request Quotation
+            </button>
+            <a
+              href="/SIZECHART.jpeg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300"
+            >
+              View Size Chart
+            </a>
+            <a
+              href="/SIZECHART.jpeg"
+              download="SIZECHART.jpeg"
+              className="px-8 py-3 bg-blue-900 text-white font-bold rounded-lg hover:bg-blue-950 transition-all duration-300"
+            >
+              Download Size Chart
+            </a>
+          </div>
         </div>
       </div>
     </section>

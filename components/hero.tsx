@@ -31,6 +31,16 @@ export default function Hero() {
       description: "Industrial-grade pallet design for high-volume handling",
     },
     {
+      image: "/Panda Self Bin.png",
+      name: "Panda Self Bin",
+      description: "Compact and durable bin for organized storage workflows",
+    },
+    {
+      image: "/Supra Bin.png",
+      name: "Supra Bin",
+      description: "Heavy-duty industrial bin for demanding warehouse operations",
+    },
+    {
       image:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/product1-457mdklFNJDRG0Sm2vz1bN02F5T53k.png",
       name: "Vented Storage Crate",

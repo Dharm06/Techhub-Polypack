@@ -11,6 +11,19 @@ export const metadata: Metadata = {
   title: 'Techhub Polypack | Premium Plastic Crates & Industrial Packaging',
   description: 'Leading manufacturer of high-quality plastic crates, storage boxes, and industrial packaging solutions with international standards. ₹100 crore brand serving 500+ clients across India.',
   generator: 'v0.app',
+  openGraph: {
+    title: 'Techhub Polypack | Premium Plastic Crates & Industrial Packaging',
+    description:
+      'Leading manufacturer of high-quality plastic crates, storage boxes, and industrial packaging solutions.',
+    images: ['/logo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Techhub Polypack | Premium Plastic Crates & Industrial Packaging',
+    description:
+      'Leading manufacturer of high-quality plastic crates, storage boxes, and industrial packaging solutions.',
+    images: ['/logo.png'],
+  },
   icons: {
     icon: [
       {
