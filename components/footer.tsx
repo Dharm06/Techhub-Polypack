@@ -72,24 +72,24 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a
-                href="tel:+919999999999"
+                href="tel:+919662291155"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors group"
               >
                 <Phone
                   size={16}
                   className="group-hover:scale-110 transition-transform"
                 />
-                <span className="text-sm">+91 XXXX XXX XXX</span>
+                <span className="text-sm">+91 96622 91155</span>
               </a>
               <a
-                href="mailto:info@techhubpolypack.com"
+                href="mailto:techhubpolypack05@gmail.com"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors group"
               >
                 <Mail
                   size={16}
                   className="group-hover:scale-110 transition-transform"
                 />
-                <span className="text-sm">info@techhubpolypack.com</span>
+                <span className="text-sm">techhubpolypack05@gmail.com</span>
               </a>
               <div className="flex items-start gap-2 text-sm pt-2">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />

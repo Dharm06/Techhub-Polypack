@@ -130,7 +130,7 @@ export default function Hero() {
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row gap-6">
               <a
-                href="tel:+919999999999"
+                href="tel:+919662291155"
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
               >
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -138,11 +138,11 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call Us</p>
-                  <p className="font-semibold">+91 XXXX XXX XXX</p>
+                  <p className="font-semibold">+91 96622 91155</p>
                 </div>
               </a>
               <a
-                href="mailto:info@techhubpolypack.com"
+                href="mailto:techhubpolypack05@gmail.com"
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
               >
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -150,7 +150,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Email</p>
-                  <p className="font-semibold">info@techhubpolypack.com</p>
+                  <p className="font-semibold">techhubpolypack05@gmail.com</p>
                 </div>
               </a>
             </div>

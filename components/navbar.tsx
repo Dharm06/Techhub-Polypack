@@ -31,19 +31,19 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-10 py-1 flex items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <a
-              href="tel:+919999999999"
+              href="tel:+919662291155"
               className="flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
             >
               <Phone size={14} />
-              <span className="sm:hidden">+91 XXXXXXXX</span>
-              <span className="hidden sm:inline">+91 XXXX XXX XXX</span>
+              <span className="sm:hidden">+91 96622...</span>
+              <span className="hidden sm:inline">+91 96622 91155</span>
             </a>
             <a
-              href="mailto:info@techhubpolypack.com"
+              href="mailto:techhubpolypack05@gmail.com"
               className="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-medium hover:text-blue-200 transition-colors"
             >
               <Mail size={14} />
-              <span>info@techhubpolypack.com</span>
+              <span>techhubpolypack05@gmail.com</span>
             </a>
           </div>
 
@@ -104,7 +104,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="https://wa.me/91xxxxxxxxxx"
+                href="https://wa.me/919662291155"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg hover:shadow-lg transition-all duration-300"
@@ -138,7 +138,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <a
-                  href="https://wa.me/91xxxxxxxxxx"
+                  href="https://wa.me/919662291155"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mx-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm font-semibold rounded-lg text-center hover:shadow-lg transition-all"
@@ -147,7 +147,7 @@ export default function Navbar() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="mailto:info@techhubpolypack.com"
+                  href="mailto:techhubpolypack05@gmail.com"
                   className="mx-4 px-4 py-2 border border-blue-200 text-blue-700 text-sm font-semibold rounded-lg text-center hover:bg-blue-50 transition-all"
                   onClick={() => setIsOpen(false)}
                 >

@@ -1,10 +1,13 @@
-'use client'
+"use client";
 
-import { Download, Phone } from 'lucide-react'
+import { Download, Phone } from "lucide-react";
 
 export default function InquiryCTA() {
   return (
-    <section id="inquiry" className="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
+    <section
+      id="inquiry"
+      className="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden"
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -z-10" />
@@ -17,27 +20,43 @@ export default function InquiryCTA() {
               Let's Transform Your Packaging
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Whether you need standard solutions or custom packaging, our team is ready to help. 
-              Get a personalized quote and consultation today.
+              Whether you need standard solutions or custom packaging, our team
+              is ready to help. Get a personalized quote and consultation today.
             </p>
 
             {/* Benefits */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">✓</span>
-                <p className="text-blue-100">Free consultation with our packaging experts</p>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                  ✓
+                </span>
+                <p className="text-blue-100">
+                  Free consultation with our packaging experts
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">✓</span>
-                <p className="text-blue-100">Customized solutions for your specific needs</p>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                  ✓
+                </span>
+                <p className="text-blue-100">
+                  Customized solutions for your specific needs
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">✓</span>
-                <p className="text-blue-100">Competitive pricing with bulk discounts</p>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                  ✓
+                </span>
+                <p className="text-blue-100">
+                  Competitive pricing with bulk discounts
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">✓</span>
-                <p className="text-blue-100">Fast turnaround and reliable delivery</p>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                  ✓
+                </span>
+                <p className="text-blue-100">
+                  Fast turnaround and reliable delivery
+                </p>
               </div>
             </div>
 
@@ -50,7 +69,7 @@ export default function InquiryCTA() {
                 Request Free Quote
               </a>
               <a
-                href="https://wa.me/91xxxxxxxxxx"
+                href="https://wa.me/919662291155"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
@@ -70,8 +89,12 @@ export default function InquiryCTA() {
                   <Download size={24} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Download Product Catalog</h3>
-                  <p className="text-blue-100 text-sm">Complete product range & specifications</p>
+                  <h3 className="text-xl font-bold">
+                    Download Product Catalog
+                  </h3>
+                  <p className="text-blue-100 text-sm">
+                    Complete product range & specifications
+                  </p>
                 </div>
               </div>
               <button className="w-full py-2 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-lg transition-all duration-300">
@@ -96,18 +119,18 @@ export default function InquiryCTA() {
               <h4 className="font-bold text-lg mb-4">Quick Contact</h4>
               <div className="space-y-3">
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+919662291155"
                   className="flex items-center gap-3 hover:text-blue-200 transition-colors"
                 >
                   <Phone size={18} />
-                  <span>+91 XXXX XXX XXX</span>
+                  <span>+91 96622 91155</span>
                 </a>
                 <a
-                  href="mailto:info@techhubpolypack.com"
+                  href="mailto:techhubpolypack05@gmail.com"
                   className="flex items-center gap-3 hover:text-blue-200 transition-colors"
                 >
                   <span>✉</span>
-                  <span>info@techhubpolypack.com</span>
+                  <span>techhubpolypack05@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -115,5 +138,5 @@ export default function InquiryCTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

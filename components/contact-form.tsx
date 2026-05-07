@@ -1,53 +1,57 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Send, CheckCircle } from 'lucide-react'
+import { useState } from "react";
+import { Send, CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    requirement: '',
-    quantity: '',
-    message: '',
-  })
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    requirement: "",
+    quantity: "",
+    message: "",
+  });
 
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
 
     // Simulate form submission
     setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
+      setLoading(false);
+      setSubmitted(true);
       // Reset form
       setFormData({
-        name: '',
-        company: '',
-        phone: '',
-        email: '',
-        requirement: '',
-        quantity: '',
-        message: '',
-      })
+        name: "",
+        company: "",
+        phone: "",
+        email: "",
+        requirement: "",
+        quantity: "",
+        message: "",
+      });
 
       // Reset message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000)
-    }, 1000)
-  }
+      setTimeout(() => setSubmitted(false), 5000);
+    }, 1000);
+  };
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-white">
@@ -63,7 +67,8 @@ export default function ContactForm() {
             Request Your Quotation
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Fill out the form below and our team will get back to you within 24-48 hours with a personalized quote
+            Fill out the form below and our team will get back to you within
+            24-48 hours with a personalized quote
           </p>
         </div>
 
@@ -74,9 +79,12 @@ export default function ContactForm() {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 animate-scale-in">
                 <CheckCircle size={32} className="text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Thank You!
+              </h3>
               <p className="text-gray-600 text-center max-w-md">
-                Your inquiry has been submitted successfully. Our team will contact you within 24-48 hours.
+                Your inquiry has been submitted successfully. Our team will
+                contact you within 24-48 hours.
               </p>
             </div>
           ) : (
@@ -84,7 +92,10 @@ export default function ContactForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Full Name <span className="text-red-600">*</span>
                   </label>
                   <input
@@ -101,7 +112,10 @@ export default function ContactForm() {
 
                 {/* Company */}
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Company Name <span className="text-red-600">*</span>
                   </label>
                   <input
@@ -118,7 +132,10 @@ export default function ContactForm() {
 
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Phone Number <span className="text-red-600">*</span>
                   </label>
                   <input
@@ -129,13 +146,16 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
-                    placeholder="+91 XXXXXXXXXX"
+                    placeholder="+91 96622 91155"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Email Address <span className="text-red-600">*</span>
                   </label>
                   <input
@@ -152,7 +172,10 @@ export default function ContactForm() {
 
                 {/* Requirement */}
                 <div>
-                  <label htmlFor="requirement" className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="requirement"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Product Requirement <span className="text-red-600">*</span>
                   </label>
                   <select
@@ -166,16 +189,25 @@ export default function ContactForm() {
                     <option value="">Select a product</option>
                     <option value="Industrial Crates">Industrial Crates</option>
                     <option value="Storage Boxes">Storage Boxes</option>
-                    <option value="Nesting Containers">Nesting Containers</option>
+                    <option value="Nesting Containers">
+                      Nesting Containers
+                    </option>
                     <option value="Custom Solutions">Custom Solutions</option>
-                    <option value="Food Grade Containers">Food Grade Containers</option>
-                    <option value="E-commerce Packaging">E-commerce Packaging</option>
+                    <option value="Food Grade Containers">
+                      Food Grade Containers
+                    </option>
+                    <option value="E-commerce Packaging">
+                      E-commerce Packaging
+                    </option>
                   </select>
                 </div>
 
                 {/* Quantity */}
                 <div>
-                  <label htmlFor="quantity" className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="quantity"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Required Quantity <span className="text-red-600">*</span>
                   </label>
                   <input
@@ -193,7 +225,10 @@ export default function ContactForm() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-gray-900 mb-2"
+                >
                   Additional Details
                 </label>
                 <textarea
@@ -227,12 +262,13 @@ export default function ContactForm() {
 
               {/* Privacy Note */}
               <p className="text-sm text-gray-600 text-center">
-                We respect your privacy. Your information will only be used to respond to your inquiry.
+                We respect your privacy. Your information will only be used to
+                respond to your inquiry.
               </p>
             </form>
           )}
         </div>
       </div>
     </section>
-  )
+  );
 }
