@@ -67,13 +67,13 @@ export default function About() {
         </div>
 
         <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-10 leading-tight">
-          About Us - <span className="bg-gradient-to-r from-blue-700 to-cyan-600 bg-clip-text text-transparent">Techhub Polypack</span>
+          About Us - <span className="bg-gradient-to-r from-blue-700 to-cyan-600 bg-clip-text text-transparent">TechHub Polypack</span>
         </h2>
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2 rounded-3xl border border-blue-100 bg-white/90 backdrop-blur p-7 md:p-9 shadow-xl shadow-blue-100/40 space-y-5 text-lg text-gray-600 leading-relaxed">
             <p>
-              Techhub Polypack is a trusted name in the polymer and packaging industry, specializing in the
+              TechHub Polypack is a trusted name in the polymer and packaging industry, specializing in the
               manufacturing of high-quality plastic products designed for modern businesses. With a strong focus on
               innovation, durability, and customer satisfaction, we deliver reliable solutions such as plastic crates,
               bean boxes, corrugated packaging boxes, industrial containers, storage solutions, and custom molded
@@ -86,7 +86,7 @@ export default function About() {
             </p>
             <p>
               With advanced manufacturing infrastructure, modern machinery, and a commitment to continuous research and
-              development, Techhub Polypack creates products that meet the highest standards of strength, functionality,
+              development, TechHub Polypack creates products that meet the highest standards of strength, functionality,
               and sustainability. Every product is engineered to perform in demanding industries including agriculture,
               logistics, warehousing, food processing, retail, and export packaging.
             </p>
@@ -140,7 +140,7 @@ export default function About() {
         </div>
 
         <div className="mt-14 rounded-3xl bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 p-6 md:p-10 text-white shadow-2xl">
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Techhub Polypack?</h3>
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">Why Choose TechHub Polypack?</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             {whyChooseUs.map((item) => (
               <div key={item} className="flex items-start gap-3 rounded-xl bg-white/10 border border-white/10 p-3">
@@ -154,7 +154,7 @@ export default function About() {
         <div className="mt-10 p-6 md:p-8 rounded-2xl border border-blue-200 bg-white shadow-lg">
           <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">Our Promise</h3>
           <p className="text-gray-600 text-lg leading-relaxed">
-            At Techhub Polypack, we don&apos;t just manufacture products - we create dependable packaging and storage
+            At TechHub Polypack, we don&apos;t just manufacture products - we create dependable packaging and storage
             solutions that power businesses across industries. From concept to creation, we are committed to quality,
             trust, and long-term success.
           </p>

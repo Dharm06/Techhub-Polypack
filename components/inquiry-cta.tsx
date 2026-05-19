@@ -72,7 +72,7 @@ export default function InquiryCTA() {
                 href="https://wa.me/919662291155"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-3 border-2 border-emerald-300 text-emerald-100 font-bold rounded-lg hover:bg-emerald-500/15 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Phone size={18} />
                 Chat on WhatsApp

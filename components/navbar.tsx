@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Facebook, Instagram, Linkedin, Mail, Menu, Phone, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -16,13 +19,30 @@ export default function Navbar() {
     { name: "Process", href: "#process" },
     { name: "Industries", href: "#industries" },
     { name: "Testimonials", href: "#testimonials" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "#contact" },
   ];
 
   const socialLinks = [
-    { label: "Instagram", href: "#", icon: Instagram },
-    { label: "LinkedIn", href: "#", icon: Linkedin },
-    { label: "Facebook", href: "#", icon: Facebook },
+    {
+      label: "Instagram",
+      href: "#",
+      icon: Instagram,
+      className:
+        "bg-gradient-to-br from-pink-500 via-fuchsia-500 to-orange-400 hover:brightness-110",
+    },
+    {
+      label: "LinkedIn",
+      href: "#",
+      icon: Linkedin,
+      className: "bg-[#0A66C2] hover:brightness-110",
+    },
+    {
+      label: "Facebook",
+      href: "#",
+      icon: Facebook,
+      className: "bg-[#1877F2] hover:brightness-110",
+    },
   ];
 
   return (
@@ -55,14 +75,17 @@ export default function Navbar() {
               Get Quote
             </a>
             <div className="hidden md:flex items-center gap-1">
-              {socialLinks.map(({ label, href, icon: Icon }) => (
+              {socialLinks.map(({ label, href, icon: Icon, className }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="h-7 w-7 rounded-md border border-white/20 flex items-center justify-center hover:bg-white/15 transition-colors"
+                  className={`group h-7 w-7 rounded-md flex items-center justify-center text-white shadow-sm transition-all ${className}`}
                 >
-                  <Icon size={14} />
+                  <Icon
+                    size={14}
+                    className="transition-transform group-hover:scale-110"
+                  />
                 </a>
               ))}
             </div>
@@ -75,12 +98,12 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16 md:h-24">
             {/* Logo */}
             <Link
-              href="#home"
+              href={isHomePage ? "#home" : "/#home"}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
               <Image
                 src="/logo.png"
-                alt="Techhub Polypack"
+                alt="TechHub Polypack"
                 width={100}
                 height={100}
                 className="h-12 sm:h-14 md:h-[72px] w-auto"
@@ -93,7 +116,11 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={
+                    link.href.startsWith("#") && !isHomePage
+                      ? `/${link.href}`
+                      : link.href
+                  }
                   className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   {link.name}
@@ -107,7 +134,7 @@ export default function Navbar() {
                 href="https://wa.me/919662291155"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg hover:shadow-lg transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg hover:shadow-lg hover:brightness-110 transition-all duration-300"
               >
                 <Phone size={16} />
                 <span className="text-sm font-semibold">WhatsApp Us</span>
@@ -130,7 +157,11 @@ export default function Navbar() {
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    href={
+                      link.href.startsWith("#") && !isHomePage
+                        ? `/${link.href}`
+                        : link.href
+                    }
                     className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
@@ -141,7 +172,7 @@ export default function Navbar() {
                   href="https://wa.me/919662291155"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mx-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm font-semibold rounded-lg text-center hover:shadow-lg transition-all"
+                  className="mx-4 px-4 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-sm font-semibold rounded-lg text-center hover:shadow-lg hover:brightness-110 transition-all"
                   onClick={() => setIsOpen(false)}
                 >
                   WhatsApp Us

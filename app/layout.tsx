@@ -6,22 +6,28 @@ import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TechHub Polypack',
+  url: 'https://techhubpolypack.com',
+  logo: 'https://techhubpolypack.com/logo.png',
+}
 
 export const metadata: Metadata = {
-  title: 'Techhub Polypack | Premium Plastic Crates & Industrial Packaging',
-  description: 'Leading manufacturer of high-quality plastic crates, storage boxes, and industrial packaging solutions with international standards. ₹100 crore brand serving 500+ clients across India.',
+  metadataBase: new URL('https://techhubpolypack.com'),
+  title: 'TechHub Polypack | Polymer Products',
+  description: 'Official Website of TechHub Polypack',
   generator: 'v0.app',
   openGraph: {
-    title: 'Techhub Polypack | Premium Plastic Crates & Industrial Packaging',
-    description:
-      'Leading manufacturer of high-quality plastic crates, storage boxes, and industrial packaging solutions.',
+    title: 'TechHub Polypack | Polymer Products',
+    description: 'Official Website of TechHub Polypack',
     images: ['/logo.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Techhub Polypack | Premium Plastic Crates & Industrial Packaging',
-    description:
-      'Leading manufacturer of high-quality plastic crates, storage boxes, and industrial packaging solutions.',
+    title: 'TechHub Polypack | Polymer Products',
+    description: 'Official Website of TechHub Polypack',
     images: ['/logo.png'],
   },
   icons: {
@@ -39,6 +45,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <SectionStartObserver />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

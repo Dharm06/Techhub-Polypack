@@ -97,7 +97,7 @@ export default function Hero() {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Techhub Polypack: India's Premier Plastic Storage Solutions
+              TechHub Polypack: India's Premier Plastic Storage Solutions
               Manufacturer
             </h1>
 

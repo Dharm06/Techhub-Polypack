@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Mail,
   Phone,
@@ -13,13 +14,15 @@ import {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const footerLinks = {
     Company: [
       { name: "About Us", href: "#about" },
       { name: "Our Products", href: "#products" },
       { name: "Testimonials", href: "#testimonials" },
-      { name: "Blog", href: "#" },
+      { name: "Blog", href: "/blog" },
     ],
     Resources: [
       { name: "Product Catalog", href: "#" },
@@ -37,15 +40,36 @@ export default function Footer() {
       { name: "Privacy Policy", href: "#" },
       { name: "Terms of Service", href: "#" },
       { name: "Certifications", href: "#" },
-      { name: "Sitemap", href: "#" },
+      { name: "Sitemap", href: "/sitemap.xml" },
     ],
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: LinkedInIcon, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    {
+      icon: Facebook,
+      href: "#",
+      label: "Facebook",
+      className: "bg-[#1877F2] hover:brightness-110",
+    },
+    {
+      icon: Instagram,
+      href: "#",
+      label: "Instagram",
+      className:
+        "bg-gradient-to-br from-pink-500 via-fuchsia-500 to-orange-400 hover:brightness-110",
+    },
+    {
+      icon: LinkedInIcon,
+      href: "#",
+      label: "LinkedIn",
+      className: "bg-[#0A66C2] hover:brightness-110",
+    },
+    {
+      icon: Twitter,
+      href: "#",
+      label: "Twitter",
+      className: "bg-[#1DA1F2] hover:brightness-110",
+    },
   ];
 
   return (
@@ -111,7 +135,11 @@ export default function Footer() {
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
-                      href={link.href}
+                      href={
+                        link.href.startsWith("#") && !isHomePage
+                          ? `/${link.href}`
+                          : link.href
+                      }
                       className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       {link.name}
@@ -128,7 +156,7 @@ export default function Footer() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Copyright */}
             <div className="text-sm text-gray-400">
-              <p>© {currentYear} Techhub Polypack. All rights reserved.</p>
+              <p>© {currentYear} TechHub Polypack. All rights reserved.</p>
               <p className="mt-2">
                 ISO 9001:2015 | FDA Approved | Made in India
               </p>
@@ -137,16 +165,16 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center justify-start md:justify-end gap-4">
               <p className="text-sm text-gray-400 mr-4">Follow us:</p>
-              {socialLinks.map(({ icon: Icon, href, label }) => (
+              {socialLinks.map(({ icon: Icon, href, label, className }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors group"
+                  className={`group w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-sm transition-all ${className}`}
                 >
                   <Icon
                     size={18}
-                    className="text-gray-400 group-hover:text-white transition-colors"
+                    className="transition-transform group-hover:scale-110"
                   />
                 </a>
               ))}

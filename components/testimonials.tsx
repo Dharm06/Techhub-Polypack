@@ -62,7 +62,7 @@ export default function Testimonials() {
             every day
           </h2>
           <p className="mt-5 text-sm md:text-lg uppercase tracking-wide text-blue-100/80">
-            From India to global markets, businesses across industries rely on Techhub Polypack.
+            From India to global markets, businesses across industries rely on TechHub Polypack.
           </p>
         </div>
 
