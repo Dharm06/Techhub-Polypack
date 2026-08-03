@@ -1,38 +1,123 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 type FloatingCompany = {
-  id: string
-  name: string
-  logo?: string
-  x: string
-  y: string
-  delay: string
-  duration: string
-}
+  id: string;
+  name: string;
+  logo?: string;
+  x: string;
+  y: string;
+  delay: string;
+  duration: string;
+};
 
 const floatingCompanies: FloatingCompany[] = [
-  { id: 'tata', name: 'Tata', logo: '/Testimonial Logos/Tata-Logo.png', x: '8%', y: '14%', delay: '0s', duration: '6.7s' },
-  { id: 'bubblefine', name: 'Bubblefine', logo: '/Testimonial Logos/bubblefine_logo.jpg', x: '22%', y: '30%', delay: '0.6s', duration: '7.2s' },
-  { id: 'techaids', name: 'Techaids', logo: '/Testimonial Logos/techaids___india_logo.jpeg', x: '77%', y: '12%', delay: '1.1s', duration: '6.8s' },
-  { id: 'fireescape', name: 'Fireescape', logo: '/Testimonial Logos/Fireespace_logo.jpeg', x: '84%', y: '30%', delay: '0.3s', duration: '7.4s' },
-  { id: 'kp-infotech', name: 'KP Infotech', logo: '/Testimonial Logos/kpinfotech_logo.jpeg', x: '76%', y: '52%', delay: '1.5s', duration: '6.9s' },
-  { id: 'sfc-solution', name: 'SFC Solution', logo: '/Testimonial Logos/sfc_solutions_fts_sealing_logo.jpeg', x: '9%', y: '50%', delay: '0.8s', duration: '7.6s' },
-  { id: 'zippycubs', name: 'Zippycubs Pvt Ltd', x: '14%', y: '72%', delay: '1.2s', duration: '6.6s' },
-  { id: 'kwality-pack', name: 'Kwality Pack', x: '80%', y: '71%', delay: '0.4s', duration: '7.1s' },
-  { id: 'advik-enterprise', name: 'Advik Enterprise', logo: '/Testimonial Logos/advik_enterprises_logo.jpeg', x: '30%', y: '84%', delay: '1.8s', duration: '6.7s' },
-  { id: 'on2cook', name: 'On2cook India Pvt Ltd', logo: '/Testimonial Logos/on2cook_Logo.jpeg', x: '60%', y: '84%', delay: '0.9s', duration: '7.3s' },
-]
+  {
+    id: "bubblefine",
+    name: "Bubblefine",
+    logo: "/Testimonial Logos/bubblefine_logo.jpg",
+    x: "8%",
+    y: "14%",
+    delay: "0s",
+    duration: "6.7s",
+  },
+  {
+    id: "plastply",
+    name: "Plastply",
+    x: "22%",
+    y: "30%",
+    delay: "0.6s",
+    duration: "7.2s",
+  },
+  {
+    id: "instant-procurement-service",
+    name: "Instant Procurement Serice Pvt Ltd",
+    x: "77%",
+    y: "12%",
+    delay: "1.1s",
+    duration: "6.8s",
+  },
+  {
+    id: "kp-infotech",
+    name: "KP Infotech",
+    logo: "/Testimonial Logos/kpinfotech_logo.jpeg",
+    x: "84%",
+    y: "30%",
+    delay: "0.3s",
+    duration: "7.4s",
+  },
+  {
+    id: "zepto",
+    name: "Zepto",
+    logo: "/Testimonial Logos/Zepto-logo.jpeg",
+    x: "76%",
+    y: "52%",
+    delay: "1.5s",
+    duration: "6.9s",
+  },
+  {
+    id: "blink-it",
+    name: "Blink it",
+    logo: "/Testimonial Logos/blinkit-logo.png",
+    x: "9%",
+    y: "50%",
+    delay: "0.8s",
+    duration: "7.6s",
+  },
+  {
+    id: "amazon",
+    name: "Amazon",
+    logo: "/Testimonial Logos/Amazone-logo.png",
+    x: "14%",
+    y: "72%",
+    delay: "1.2s",
+    duration: "6.6s",
+  },
+  {
+    id: "tata",
+    name: "Tata",
+    logo: "/Testimonial Logos/Tata-Logo.png",
+    x: "80%",
+    y: "71%",
+    delay: "0.4s",
+    duration: "7.1s",
+  },
+  {
+    id: "myntra",
+    name: "Myntra",
+    logo: "/Testimonial Logos/myntra-logo.jpeg",
+    x: "30%",
+    y: "84%",
+    delay: "1.8s",
+    duration: "6.7s",
+  },
+  {
+    id: "bigg-basket",
+    name: "Bigg basket",
+    logo: "/Testimonial Logos/Bigbasket-logo.jpeg",
+    x: "60%",
+    y: "84%",
+    delay: "0.9s",
+    duration: "7.3s",
+  },
+];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="no-section-lines relative py-20 md:py-28 bg-[#03040d] overflow-hidden">
+    <section
+      id="testimonials"
+      className="no-section-lines relative py-20 md:py-28 bg-[#03040d] overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(56,189,248,0.24),transparent_36%),radial-gradient(circle_at_78%_72%,rgba(168,85,247,0.22),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(59,130,246,0.2),transparent_34%)]" />
       <div className="absolute left-[10%] top-[18%] h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
       <div className="absolute right-[8%] bottom-[14%] h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
       <div className="absolute inset-0 opacity-80">
-        <svg className="h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+        <svg
+          className="h-full w-full"
+          viewBox="0 0 1200 500"
+          preserveAspectRatio="xMidYMid slice"
+        >
           <g fill="#ffffff">
             {Array.from({ length: 700 }).map((_, i) => (
               <circle
@@ -55,14 +140,15 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Trusted by{' '}
+            Trusted by{" "}
             <span className="inline-block bg-blue-600 text-white px-3 py-1 rounded-sm">
               customers worldwide
-            </span>{' '}
+            </span>{" "}
             every day
           </h2>
           <p className="mt-5 text-sm md:text-lg uppercase tracking-wide text-blue-100/80">
-            From India to global markets, businesses across industries rely on TechHub Polypack.
+            From India to global markets, businesses across industries rely on
+            TechHub Polypack.
           </p>
         </div>
 
@@ -91,7 +177,9 @@ export default function Testimonials() {
                           className="object-contain h-6 w-6"
                         />
                       ) : (
-                        <span className="text-xs font-bold text-slate-900">{company.name.charAt(0)}</span>
+                        <span className="text-xs font-bold text-slate-900">
+                          {company.name.charAt(0)}
+                        </span>
                       )}
                     </div>
                     <p className="text-xs font-bold uppercase tracking-wide text-cyan-100 leading-tight">
@@ -112,7 +200,10 @@ export default function Testimonials() {
                   playsInline
                   preload="metadata"
                 >
-                  <source src="/original-bf5c1b5df8560f599a0001dcd121a7ff.mp4" type="video/mp4" />
+                  <source
+                    src="/original-bf5c1b5df8560f599a0001dcd121a7ff.mp4"
+                    type="video/mp4"
+                  />
                 </video>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.45),transparent_42%)]" />
               </div>
@@ -138,7 +229,9 @@ export default function Testimonials() {
                       className="object-contain h-5 w-5"
                     />
                   ) : (
-                    <span className="text-[10px] font-bold text-slate-900">{company.name.charAt(0)}</span>
+                    <span className="text-[10px] font-bold text-slate-900">
+                      {company.name.charAt(0)}
+                    </span>
                   )}
                 </div>
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-cyan-100 text-left leading-tight">
@@ -150,5 +243,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }
